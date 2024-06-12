@@ -1,0 +1,17 @@
+@model Shoes.Models.Urunler
+
+<h2>Ürünü Güncelle</h2>
+
+<form asp-action="Guncelle" method="post">
+    <input type="hidden" asp-for="UrunId" />
+    <div class="form-group">
+        <label for="UrunAd">Ürün Adı:</label>
+        <input type="text" class="form-control" id="UrunAd" name="UrunAd" value="@Model.UrunAd" />
+    </div>
+    <div class="form-group">
+        <label for="Fiyat">Fiyat:</label>
+        <input type="text" class="form-control" id="Fiyat" name="Fiyat" value="@Model.Fiyat" />
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>

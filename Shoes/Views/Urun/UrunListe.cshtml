@@ -1,0 +1,26 @@
+@model IEnumerable<Shoes.Models.Urunler>
+
+@{
+    ViewBag.Title = ViewBag.KategoriAdi + " Ürün Listesi";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center custom-card-title">@ViewBag.KategoriAdi Ürün Listesi</h2>
+    <hr>
+    <div class="row">
+        @foreach (var urun in Model)
+        {
+             <div class="col-md-4 mb-4">
+                <div class="card custom-card custom-card-product h-100">
+                    <img src="~/images/@urun.ResimAd" class="card-img-top" alt="@urun.UrunAd">
+                    <div class="card-body custom-card-body">
+                        <h3 class="custom-h3">@urun.UrunAd</h3>
+                        <p>@urun.Ozellik</p>
+                        <p><strong>Fiyat:</strong> @(urun.Fiyat.HasValue ? urun.Fiyat.Value.ToString("C") : "Fiyat bilgisi yok")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

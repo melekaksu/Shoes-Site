@@ -1,0 +1,15 @@
+@model Shoes.Models.Urunler
+
+<h2>Ürünü Sil</h2>
+
+<div>
+    <p>Ürünü silmek istediğinizden emin misiniz?</p>
+    <p>Ürün Adı: @Model.UrunAd</p>
+    <p>Fiyat: @(Model.Fiyat.HasValue ? Model.Fiyat.Value.ToString("C") : "Fiyat bilgisi yok")</p>
+
+    <form asp-action="Sil" method="post">
+        <input type="hidden" asp-for="UrunId" />
+        <button type="submit" class="btn btn-danger">Evet, Sil</button>
+        <a asp-action="Detay" asp-route-id="@Model.UrunId" class="btn btn-secondary">Vazgeç</a>
+    </form>
+</div>

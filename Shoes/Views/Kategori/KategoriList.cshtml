@@ -1,0 +1,34 @@
+@model IEnumerable<Shoes.Models.Kategoriler>
+
+@{
+    ViewBag.Title = "Kategoriler";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center custom-card-title ">Kategoriler</h2>
+    <hr>
+    <div class="row">
+        @foreach (var kategori in Model)
+        {
+            <div class="col-md-4">
+                <div class="card custom-card custom-card-category" data-category-id="@kategori.KategoriId">
+                    <div class="card-body custom-card-body">
+                        <h3 class="custom-h3">@kategori.KategoriAd</h3>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var cards = document.querySelectorAll('.custom-card');
+        cards.forEach(function (card) {
+            card.addEventListener('click', function () {
+                var categoryId = card.getAttribute('data-category-id');
+                window.location.href = '@Url.Action("UrunListe", "Urun")?kategoriId=' + categoryId;
+            });
+        });
+    });
+</script>

@@ -1,0 +1,10 @@
+@model Shoes.Models.Urunler
+
+<h2>Ürün Detayı</h2>
+
+<div>
+    <h4>Ürün Adı: @Model.UrunAd</h4>
+    <p>ÖZellik: @Model.Ozellik</p>
+    <p>Fiyat: @(Model.Fiyat.HasValue ? Model.Fiyat.Value.ToString("C") : "Fiyat bilgisi yok")</p>
+
+</div>

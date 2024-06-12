@@ -1,0 +1,35 @@
+@model List<Shoes.Models.Urunler>
+
+@{
+    ViewBag.Title = "Ürün Ara";
+}
+
+<h2>Ürün Ara</h2>
+
+@if (Model != null && Model.Any())
+{
+    <p style="color: darkblue;
+    font-size: 30px;
+    font-weight: bold;">ARADIĞINIZ ÜRÜNLER</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="font-size: 20px">Ürün Adı</th>
+                <th style="font-size: 20px">Görsel</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var urun in Model)
+            {
+                <tr>
+                    <td>@urun.UrunAd</td>
+                    <td><img src="~/images/@urun.ResimAd" alt="Ürün Resmi" style="max-width: 100px; max-height: 100px;"></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Aradığınız ürün bulunamadı.</p>
+}

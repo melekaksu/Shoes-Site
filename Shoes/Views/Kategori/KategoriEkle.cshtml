@@ -1,0 +1,17 @@
+@model Shoes.Models.Kategoriler
+
+@{
+    ViewBag.Title = "Kategori Ekle";
+}
+
+<h2>Kategori Ekle</h2>
+
+<form asp-action="KategoriEkle" method="post">
+    <div class="form-group">
+        <label asp-for="KategoriAd">Kategori Adı: </label>
+        <input asp-for="KategoriAd" class="form-control" />
+        <span asp-validation-for="KategoriAd" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>

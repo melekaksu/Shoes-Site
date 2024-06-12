@@ -1,0 +1,64 @@
+@model Shoes.Models.Urunler
+
+@{
+    ViewBag.Title = "Ürün Ekle";
+}
+
+<h2>Ürün Ekle</h2>
+
+<form asp-action="UrunEkle" method="post">
+    <div class="form-group">
+        <label asp-for="UrunAd">Ürün Adı:</label>
+        <input asp-for="UrunAd" class="form-control" />
+        <span asp-validation-for="UrunAd" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ResimAd">Resim Adı:</label>
+        <input asp-for="ResimAd" class="form-control" />
+        <span asp-validation-for="ResimAd" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Fiyat">Fiyat:</label>
+        <input asp-for="Fiyat" class="form-control" />
+        <span asp-validation-for="Fiyat" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Ozellik">Özellikler:</label>
+        <input asp-for="Ozellik" class="form-control" />
+        <span asp-validation-for="Ozellik" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="KategoriId">Kategori:</label>
+        <select class="form-control" id="KategoriId" asp-for="KategoriId" asp-items="@GetKategoriOptions()">
+            <option value="">-- Kategori Seçin --</option>
+        </select>
+        <span asp-validation-for="KategoriId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
+
+@functions {
+    public List<SelectListItem> GetKategoriOptions()
+    {
+        // Kategorileri veritabanından veya başka bir kaynaktan alın
+        // Bu örnekte sabit bir liste kullanıyoruz
+        var kategoriler = new List<SelectListItem>
+{
+new SelectListItem { Value = "1", Text = "Sneaker" },
+new SelectListItem { Value = "2", Text = "Bot&Çizme" },
+new SelectListItem { Value = "3", Text = "Terlik&Sandalet"},
+new SelectListItem { Value = "4", Text = "Casual&Klasik"},
+new SelectListItem { Value = "5", Text = "Topuklu Ayakkabılar"},
+new SelectListItem { Value = "6", Text = "Spor&Outdoor "},
+new SelectListItem { Value = "7", Text = "Ev Terliği"},
+new SelectListItem { Value = "8", Text = "Düz Ayakkabı"},
+};
+
+        return kategoriler;
+    }
+}

@@ -1,0 +1,49 @@
+@{
+    ViewBag.Title = "İletişim";
+}
+
+<div class="container mt-5">
+    <h2>İletişim</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>İletişim Formu</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Adınız</label>
+                    <input type="text" class="form-control" id="name" placeholder="Adınız">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email adresiniz">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mesajınız</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Mesajınız"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Bize Ulaşın</h3>
+            <p>
+                Her türlü soru, öneri ve görüşleriniz için bizimle iletişime geçebilirsiniz. Size yardımcı olmaktan
+                memnuniyet duyarız.
+            </p>
+            <ul>
+                <li>Telefon: 0123 456 7890</li>
+                <li>Email: shoes@ayakkabifirma.com</li>
+                <li>Adres: Ayakkabı Sokak No: 123, Erzurum, Türkiye</li>
+            </ul>
+            <ul class="list-unstyled">
+                <li><a href="https://www.instagram.com/mashoes" target="_blank"><i class="fab fa-instagram"></i>
+                        Instagram</a></li>
+                <li><a href="https://www.facebook.com/mashoes" target="_blank"><i class="fab fa-facebook"></i>
+                        Facebook</a></li>
+                <li><a href="https://www.twitter.com/mashoes" target="_blank"><i class="fab fa-twitter"></i>
+                        Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
